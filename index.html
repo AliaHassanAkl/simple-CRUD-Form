@@ -1,0 +1,40 @@
+<html>
+    <!DOCTYPE html>
+    <head lang="en">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <h1>It's A Simple CRUD Form </h1>
+        <hr>
+        <div class="w-75 m-auto pt-5 p-4 mt-5 bg-success d-grid gap-2" >
+            <label for="productName" class="p-2">Product name</label>
+            <input type="text" class="form-control" id="productName">
+            <label for="price" class="p-2" >Price</label>
+            <input type="text" class="form-control" id="price">
+            <label for="category" class="p-2">Category</label>
+            <input type="text" class="form-control" id="category">
+            <label for="discription" class="p-2">Product discription</label>
+            <textarea rows="" cols=""type="text" class="form-control" id="discription">  </textarea>
+            <button id="btnAdd" class="btn btn-light text-bg-success mt-lg-5">Add product</button>
+        </div>
+        <div class=" "> <input type="text" class="form-control border-2 border-success py-3 w-50 m-auto my-5" placeholder="Search by name ..." id="searchKey" ></div>
+        <table class="table table-striped m-5 text-success">
+            <thead>
+                <th> Product Name </th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Discription</th>
+            </thead>
+            <tbody id="tableBody">
+                
+            </tbody>
+        </table>
+
+        
+        <script src="js/all.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
