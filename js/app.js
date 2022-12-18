@@ -8,6 +8,7 @@ var searchkey = document.getElementById('searchKey');
 var products=[];
 var btnAdd = document.getElementById('btnAdd');
 var currentIndex="";
+var nameAlert = document.getElementById('nameAlert')
 
 // retrieve and storage
 if(JSON.parse(localStorage.getItem('productslist'))!=null){;
@@ -109,3 +110,70 @@ function updateProduct(){
     // send to local storage
     localStorage.setItem("productslist",JSON.stringify(products));
 }
+// validation functions 
+productName.onkeyup= function(){
+    var nameREJEX=/^[A-Za-z- ]{3,10}$/
+    if( nameREJEX.test(productName.value)){
+        //valid
+        btnAdd.removeAttribute('disabled');
+        productName.classList.add('is-valid');
+        productName.classList.remove('is-invalid');
+        nameAlert.classList.add('d-none');
+
+
+    }else {
+        //invalid
+        btnAdd.disabled=true;
+        productName.classList.add('is-invalid');
+        productName.classList.remove('is-valid');
+        nameAlert.classList.remove('d-none');
+    }
+}
+price.onkeyup= function(){
+    var priceREJEX=/^[0-9]{1,7}$/;
+    if(priceREJEX.test(price.value)){
+        //valid
+        btnAdd.removeAttribute('disabled');
+        price.classList.add('is-valid');
+        price.classList.remove('is-invalid');
+        priceAlert.classList.add('d-none');
+    }else{
+        //invalid
+        btnAdd.disabled=true;
+        price.classList.add('is-invalid')
+        price.classList.remove('is-valid')
+        priceAlert.classList.remove('d-none')
+    }
+};
+category.onkeyup= function(){
+    var categoryREJEX=/^[A-Za-z- ]{1,20}$/;
+    if(categoryREJEX.test(category.value)){
+        //valid
+        btnAdd.removeAttribute('disabled');
+        category.classList.add('is-valid')
+        category.classList.remove('is-invalid')
+        categoryAlert.classList.add('d-none')
+    }else{
+        //invalid
+        btnAdd.disabled=true;
+        category.classList.add('is-invalid')
+        category.classList.remove('is-valid')
+        categoryAlert.classList.remove('d-none')
+    }
+};   
+discription.onkeyup= function(){
+    var discriptionREJEX=/^[A-Za-z- ]{1,100}$/;
+    if(discriptionREJEX.test(discription.value)){
+        //valid
+        btnAdd.removeAttribute('disabled');
+        discription.classList.add('is-valid')
+        discription.classList.remove('is-invalid')
+        discriptionAlert.classList.add('d-none')
+    }else{
+        //invalid
+        btnAdd.disabled=true;
+        discription.classList.add('is-invalid')
+        discription.classList.remove('is-valid')
+        discriptionAlert.classList.remove('d-none')
+    }
+};   

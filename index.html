@@ -9,15 +9,19 @@
         <h1>It's A Simple CRUD Form </h1>
         <hr>
         <div class="w-75 m-auto pt-5 p-4 mt-5 bg-success d-grid gap-2" >
-            <label for="productName" class="p-2">Product name</label>
-            <input type="text" class="form-control" id="productName">
-            <label for="price" class="p-2" >Price</label>
-            <input type="text" class="form-control" id="price">
-            <label for="category" class="p-2">Category</label>
+            <label for="productName" class="p-2">Product name <span class="text-danger">*</span> </label>
+            <input type="text" class="form-control " id="productName">
+            <div id="nameAlert" class="alert alert-danger d-none m-2 p-2" > product name should contain characters only </div>
+            <label for="price" class="p-2" >Price<span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="price">
+            <div id="priceAlert" class="alert alert-danger d-none m-2 p-2" > product price is not correct </div>
+            <label for="category" class="p-2">Category<span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="category">
+            <div id="categoryAlert" class="alert alert-danger d-none m-2 p-2" > you should enter a category  </div>
             <label for="discription" class="p-2">Product discription</label>
-            <textarea rows="" cols=""type="text" class="form-control" id="discription">  </textarea>
-            <button id="btnAdd" class="btn btn-light text-bg-success mt-lg-5">Add product</button>
+            <textarea rows="" cols=""type="text" class="form-control" id="discription" placeholder="discription should be less than 100 characher , no special charachers is allowed">  </textarea>
+            <div id="discriptionAlert" class="alert alert-danger d-none m-2 p-2" > discription should be less than 100 characher  </div>
+            <button id="btnAdd" disabled class="btn btn-light  text-bg-success mt-lg-5">Add product</button>
         </div>
         <div class=" "> <input type="text" class="form-control border-2 border-success py-3 w-50 m-auto my-5" placeholder="Search by name ..." id="searchKey" ></div>
         <table class="table table-striped m-5 text-success">
